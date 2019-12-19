@@ -21,37 +21,43 @@ const char MatrixKeypad[4][4] =
 {'5','6','B','4'},
 {'8','9','C','7'},
 {'0','#','D','*'}}; //Array of the keypad, with char's.
+	
+	void init_KeyPad(){
+		Keypad_Aktiv_DDR |= 0x0f; // PK0-3 Output PK4-7 Input
+			
+		Keypad_PORTX |= 0xff; //Aktivere alle Portene til at være Logical 1
+	}
 
 int ReadRows()
 {
-	if (~PINK & (1<<PK7)) //Row 1
+	if (~Keypad_PINX & (1<<Keypad_PX7)) //Row 1
 	{
 		Row_Delay;
-		if (~PINK & (1<<PK7)) //Fixes input glitch from Matrix keypad
+		if (~Keypad_PINX & (1<<Keypad_PX7)) //Fixes input glitch from Matrix keypad
 		{
 			return 1;
 		}
 	}
-	else if (~PINK & (1<<PK6)) //ROW 2
+	else if (~Keypad_PINX & (1<<Keypad_PX6)) //ROW 2
 	{
 		Row_Delay;
-		if (~PINK & (1<<PK6)) //Fixes input glitch from Matrix keypad
+		if (~Keypad_PINX & (1<<Keypad_PX6)) //Fixes input glitch from Matrix keypad
 		{
 			return 2;
 		}
 	}
-	else if (~PINK & (1<<PK5)) //ROW 3
+	else if (~Keypad_PINX & (1<<Keypad_PX5)) //ROW 3
 	{
 		Row_Delay;
-		if (~PINK & (1<<PK5)) //Fixes input glitch from Matrix keypad
+		if (~Keypad_PINX & (1<<Keypad_PX5)) //Fixes input glitch from Matrix keypad
 		{
 			return 3;
 		}
 	}
-	else if (~PINK & (1<<PK4)) //ROW4
+	else if (~Keypad_PINX & (1<<Keypad_PX4)) //ROW4
 	{
 		Row_Delay;
-		if (~PINK & (1<<PK4)) //Fixes input glitch from Matrix keypad
+		if (~Keypad_PINX & (1<<Keypad_PX4)) //Fixes input glitch from Matrix keypad
 		{
 			return 4;
 		}
@@ -61,11 +67,11 @@ int ReadRows()
 
 int ColumnScan(){
 	
-	PORTK  |= (1<<PK0) | (1<<PK1) | (1<<PK2) | (1<<PK3);
+	Keypad_PORTX  |= Keypad_Aktiv_PX;
 	static counter = 1;
 	if (counter == 1) //COL 4
 	{
-		PORTK &= ~(1<<PK0); //1111 1110
+		Keypad_PORTX &= ~(1<<Keypad_PX0); //1111 1110
 		Col_Delay;
 		_delay_ms(50);
 		counter++; //Pludser counteren så den går hen i næste if statement næstegang denne er kørt.
@@ -73,7 +79,7 @@ int ColumnScan(){
 	}
 	else if (counter == 2) //COL 3
 	{
-		PORTK &= ~(1<<PK1); //1111 1101
+		Keypad_PORTX &= ~(1<<Keypad_PX1); //1111 1101
 		Col_Delay;
 		_delay_ms(50);
 		counter++;
@@ -81,7 +87,7 @@ int ColumnScan(){
 	}
 	else if (counter == 3) // COL 2
 	{
-		PORTK &= ~(1<<PK2); //1111 1011
+		Keypad_PORTX &= ~(1<<Keypad_PX2); //1111 1011
 		Col_Delay;
 		_delay_ms(50);
 		counter++;
@@ -89,7 +95,7 @@ int ColumnScan(){
 	}
 	else if (counter == 4) //COL 1
 	{
-		PORTK &= ~(1<<PK3); //1111 1101
+		Keypad_PORTX &= ~(1<<Keypad_PX3); //1111 1101
 		Col_Delay;
 		_delay_ms(50);
 		counter = 1;
@@ -113,6 +119,33 @@ void DecodeKeyboard(int col, int row){
 		_delay_ms(150);	 //This delay made the keypad work very smoothly and make you control how many number's you press.
 	}
 }
+
+int StepKeyboard(int col, int row){
+	//360 degress = 512 is max steps
+	int step_postion = 1;
+	if (row != 0 && col != 0)
+	{
+		char matrixvalue = MatrixKeypad[row-1][col-1]; // Takes a specific value out from the array based on input
+		
+		switch(matrixvalue){
+			case '6'
+				TurnRight(step_postion);
+				return 3; //Current menu position
+			break;
+			case '4'
+				TurnLeft(step_postion);
+				return 3; //Current menu position
+			break;
+			case '5'
+				return 3;
+			break;
+			case '*'
+				return 0;
+			break;
+		}
+	}
+}
+
 
 void KeyFunctions(char input){
 	static int currentmenu;
@@ -139,7 +172,13 @@ void KeyFunctions(char input){
 		}
 		break;
 		case 'D':
-			TurnRight(512);
+			lcd_clrscr();
+			lcd_puts("Garage Is Opening");
+			currentmenu = 3
+			while (currentmenu == 3)
+			{
+				currentmenu = StepKeyboard(ColumnScan(),ReadRows()); 
+			}
 		break;
 		case 'A':
 		lcd_clrscr();
@@ -187,7 +226,7 @@ int AlarmDecodeKeyboard(int col, int row){
 			atempts++;
 		}
 	}
-	else if (strcmp(userinput,password) == 0)
+	else if (strcmp(userinput,password) == 0) //Compares char array's if same it return's 0 else a negative number
 	{
 		printf("%d", result);
 		lcd_clrscr();

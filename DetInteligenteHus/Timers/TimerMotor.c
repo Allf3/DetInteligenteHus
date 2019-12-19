@@ -18,11 +18,11 @@ void init_Timer5(){
 	
 	TCCR5B |= (1<<CS51) | (1<<CS50) | (1<<WGM52); // 17.11.8
 	
-	DDRL |= (1<<PB7) | (1<<PB6) | (1<<PB5); //Datasheet 13.3.11
+	Aktiv_Port |= Aktiv_OutputPorts; //Datasheet 13.3.11
 	
-	OCR5C = 0;
+	Aktiv_OCRXC = 0;
 }
 
 void Set_OCR5C(int val){
-	OCR5C = val;
+	Aktiv_OCRXC = val;
 }
