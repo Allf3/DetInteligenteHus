@@ -3,7 +3,8 @@
  *
  * Created: 19-12-2019 12:21:28
  *  Author: mart624n
- */ 
+ */
+//512 turns are 360 degrees. 
 
 #define F_CPU 16000000UL
 #include <avr/io.h>

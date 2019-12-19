@@ -13,6 +13,7 @@
 #include "Keypad.h"
 #include <avr/interrupt.h>
 #include "../ADC/ADCTEMP.h"
+#include "../Step/StepMotor.h"
 #include <string.h>
 
 const char MatrixKeypad[4][4] =
@@ -136,6 +137,9 @@ void KeyFunctions(char input){
 			
 			DecodeKeyboard(ColumnScan(),ReadRows());
 		}
+		break;
+		case 'D':
+			TurnRight(512);
 		break;
 		case 'A':
 		lcd_clrscr();

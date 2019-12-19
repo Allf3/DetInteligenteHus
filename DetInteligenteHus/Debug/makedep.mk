@@ -12,5 +12,7 @@ main.c
 
 setup\stdio_setup.c
 
+Step\StepMotor.c
+
 Timers\TimerMotor.c
 

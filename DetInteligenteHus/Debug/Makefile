@@ -36,6 +36,7 @@ SUBDIRS :=  \
 ../ADC \
 ../Keypad \
 ../LCD \
+../Step \
 ../Timers \
 ../setup
 
@@ -47,6 +48,7 @@ C_SRCS +=  \
 ../LCD/lcd.c \
 ../main.c \
 ../setup/stdio_setup.c \
+../Step/StepMotor.c \
 ../Timers/TimerMotor.c
 
 
@@ -62,6 +64,7 @@ Keypad/Keypad.o \
 LCD/lcd.o \
 main.o \
 setup/stdio_setup.o \
+Step/StepMotor.o \
 Timers/TimerMotor.o
 
 OBJS_AS_ARGS +=  \
@@ -70,6 +73,7 @@ Keypad/Keypad.o \
 LCD/lcd.o \
 main.o \
 setup/stdio_setup.o \
+Step/StepMotor.o \
 Timers/TimerMotor.o
 
 C_DEPS +=  \
@@ -78,6 +82,7 @@ Keypad/Keypad.d \
 LCD/lcd.d \
 main.d \
 setup/stdio_setup.d \
+Step/StepMotor.d \
 Timers/TimerMotor.d
 
 C_DEPS_AS_ARGS +=  \
@@ -86,6 +91,7 @@ Keypad/Keypad.d \
 LCD/lcd.d \
 main.d \
 setup/stdio_setup.d \
+Step/StepMotor.d \
 Timers/TimerMotor.d
 
 OUTPUT_FILE_PATH +=DetInteligenteHus.elf
@@ -131,6 +137,13 @@ LCD/lcd.o: ../LCD/lcd.c
 	
 
 setup/stdio_setup.o: ../setup/stdio_setup.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../setup" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+Step/StepMotor.o: ../Step/StepMotor.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.90\include" -I"../setup" -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\include"  -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -mrelax -g2 -Wall -mmcu=atmega2560 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.3.300\gcc\dev\atmega2560" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

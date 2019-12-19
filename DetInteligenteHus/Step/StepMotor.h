@@ -9,8 +9,10 @@
 #ifndef STEPMOTOR_H_
 #define STEPMOTOR_H_
 
+void TurnRight(int turns);
 
+void init_StepMotor();
 
-
+void TurnLeft(int turns);
 
 #endif /* STEPMOTOR_H_ */

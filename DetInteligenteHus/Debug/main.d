@@ -22,7 +22,7 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
  .././Keypad/Keypad.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdbool.h \
- .././ADC/ADCTEMP.h .././Timers/TimerMotor.h
+ .././ADC/ADCTEMP.h .././Timers/TimerMotor.h .././Step/StepMotor.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
@@ -75,3 +75,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 .././ADC/ADCTEMP.h:
 
 .././Timers/TimerMotor.h:
+
+.././Step/StepMotor.h:

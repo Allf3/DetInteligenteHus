@@ -8,6 +8,7 @@
 #include "Keypad/Keypad.h"
 #include "ADC/ADCTEMP.h"
 #include "Timers/TimerMotor.h"
+#include "Step/StepMotor.h"
 
 #define F_CPU 16000000UL
 
@@ -57,6 +58,7 @@ int main(void)
 	initLCD();
 	ADCINIT();
 	init_Timer5();
+	init_StepMotor();
 	alarm = 1;
 	while(1) {			
 		DecodeKeyboard(ColumnScan(),ReadRows()); //Look in keypad.h for information about this Function'

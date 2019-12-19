@@ -184,6 +184,12 @@
     <Compile Include="setup\stdio_setup.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Step\StepMotor.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Step\StepMotor.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="Timers\TimerMotor.c">
       <SubType>compile</SubType>
     </Compile>
@@ -195,6 +201,7 @@
     <Folder Include="ADC" />
     <Folder Include="Keypad" />
     <Folder Include="LCD" />
+    <Folder Include="Step" />
     <Folder Include="Timers" />
     <Folder Include="setup" />
   </ItemGroup>
