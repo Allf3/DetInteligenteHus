@@ -1,0 +1,112 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stdio\+\_\+setup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}L\+C\+D/lcd.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Keypad/\+Keypad.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}A\+D\+C/\+A\+D\+C\+T\+E\+M\+P.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Timers/\+Timer\+Motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Step/\+Step\+Motor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Interupt/\+Interupts.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}{F\+\_\+\+C\+PU}}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a02fd73d861ef2e4aabb38c0c9ff82947}{init}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a08529d00f32f8441dc7669b1a1d3783c}{init\+L\+CD}} ()
+\item 
+\mbox{\hyperlink{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}{I\+SR}} (P\+C\+I\+N\+T0\+\_\+vect)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static volatile int \mbox{\hyperlink{main_8c_ac6dba2624246aec54e3bc5415f5d84ad}{alarm}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\index{main.c@{main.c}!F\_CPU@{F\_CPU}}
+\index{F\_CPU@{F\_CPU}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{F\_CPU}{F\_CPU}}
+{\footnotesize\ttfamily \#define F\+\_\+\+C\+PU~16000000\+UL}
+
+
+
+Definition at line 14 of file main.\+c.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a02fd73d861ef2e4aabb38c0c9ff82947}\label{main_8c_a02fd73d861ef2e4aabb38c0c9ff82947}} 
+\index{main.c@{main.c}!init@{init}}
+\index{init@{init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file main.\+c.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{main_8c_a08529d00f32f8441dc7669b1a1d3783c}\label{main_8c_a08529d00f32f8441dc7669b1a1d3783c}} 
+\index{main.c@{main.c}!initLCD@{initLCD}}
+\index{initLCD@{initLCD}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{initLCD()}{initLCD()}}
+{\footnotesize\ttfamily void init\+L\+CD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file main.\+c.
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}\label{main_8c_aa64c6dce15e9de9105b4ae9533c9a267}} 
+\index{main.c@{main.c}!ISR@{ISR}}
+\index{ISR@{ISR}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily I\+SR (\begin{DoxyParamCaption}\item[{P\+C\+I\+N\+T0\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file main.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file main.\+c.
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_ac6dba2624246aec54e3bc5415f5d84ad}\label{main_8c_ac6dba2624246aec54e3bc5415f5d84ad}} 
+\index{main.c@{main.c}!alarm@{alarm}}
+\index{alarm@{alarm}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{alarm}{alarm}}
+{\footnotesize\ttfamily volatile int alarm\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 33 of file main.\+c.
+

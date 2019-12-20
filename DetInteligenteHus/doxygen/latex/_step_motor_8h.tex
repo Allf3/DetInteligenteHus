@@ -1,0 +1,146 @@
+\hypertarget{_step_motor_8h}{}\doxysection{Step/\+Step\+Motor.h File Reference}
+\label{_step_motor_8h}\index{Step/StepMotor.h@{Step/StepMotor.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a4587afbd61c02ef750f51165a34187d6}{Delay\+\_\+\+On\+Step}}~\+\_\+delay\+\_\+ms(20);
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a21783f253bf1f382fc4754ec55ca22ca}{Port\+X\+\_\+used}}~P\+O\+R\+TC;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_ad80d90c71f500634758c70cf65ae4879}{Aktiv\+\_\+\+Port\+\_\+\+Step}}~D\+D\+RC;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_ac92748410ae7bec240eed530d495f96a}{Step\+\_\+\+P\+X0}}~P\+C0;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a8ded541bb4397eeb909aa15f696352b7}{Step\+\_\+\+P\+X1}}~P\+C1;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a68f955215c22759e68ac9387225dae96}{Step\+\_\+\+P\+X2}}~P\+C2;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a85cafcc6dd59ca665bc18ac340bcb968}{Step\+\_\+\+P\+X3}}~P\+C3;
+\item 
+\#define \mbox{\hyperlink{_step_motor_8h_a1d82c2bab4d851419b4d5ad88002df40}{Aktiv\+\_\+\+Ports\+\_\+\+Step}}~(1$<$$<$\mbox{\hyperlink{_step_motor_8h_ac92748410ae7bec240eed530d495f96a}{Step\+\_\+\+P\+X0}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a8ded541bb4397eeb909aa15f696352b7}{Step\+\_\+\+P\+X1}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a68f955215c22759e68ac9387225dae96}{Step\+\_\+\+P\+X2}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a85cafcc6dd59ca665bc18ac340bcb968}{Step\+\_\+\+P\+X3}});
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_step_motor_8h_ace44de3e98f604da66674ce6ebccd41f}{Turn\+Right}} (int turns)
+\item 
+void \mbox{\hyperlink{_step_motor_8h_a7e361492baf87bc206f2b32453257938}{init\+\_\+\+Step\+Motor}} ()
+\item 
+void \mbox{\hyperlink{_step_motor_8h_abc73700b5c80324e6f187098c7c3876f}{Turn\+Left}} (int turns)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_step_motor_8h_ad80d90c71f500634758c70cf65ae4879}\label{_step_motor_8h_ad80d90c71f500634758c70cf65ae4879}} 
+\index{StepMotor.h@{StepMotor.h}!Aktiv\_Port\_Step@{Aktiv\_Port\_Step}}
+\index{Aktiv\_Port\_Step@{Aktiv\_Port\_Step}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Aktiv\_Port\_Step}{Aktiv\_Port\_Step}}
+{\footnotesize\ttfamily \#define Aktiv\+\_\+\+Port\+\_\+\+Step~D\+D\+RC;}
+
+
+
+Definition at line 16 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a1d82c2bab4d851419b4d5ad88002df40}\label{_step_motor_8h_a1d82c2bab4d851419b4d5ad88002df40}} 
+\index{StepMotor.h@{StepMotor.h}!Aktiv\_Ports\_Step@{Aktiv\_Ports\_Step}}
+\index{Aktiv\_Ports\_Step@{Aktiv\_Ports\_Step}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Aktiv\_Ports\_Step}{Aktiv\_Ports\_Step}}
+{\footnotesize\ttfamily \#define Aktiv\+\_\+\+Ports\+\_\+\+Step~(1$<$$<$\mbox{\hyperlink{_step_motor_8h_ac92748410ae7bec240eed530d495f96a}{Step\+\_\+\+P\+X0}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a8ded541bb4397eeb909aa15f696352b7}{Step\+\_\+\+P\+X1}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a68f955215c22759e68ac9387225dae96}{Step\+\_\+\+P\+X2}}) $\vert$ (1$<$$<$\mbox{\hyperlink{_step_motor_8h_a85cafcc6dd59ca665bc18ac340bcb968}{Step\+\_\+\+P\+X3}});}
+
+
+
+Definition at line 26 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a4587afbd61c02ef750f51165a34187d6}\label{_step_motor_8h_a4587afbd61c02ef750f51165a34187d6}} 
+\index{StepMotor.h@{StepMotor.h}!Delay\_OnStep@{Delay\_OnStep}}
+\index{Delay\_OnStep@{Delay\_OnStep}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Delay\_OnStep}{Delay\_OnStep}}
+{\footnotesize\ttfamily \#define Delay\+\_\+\+On\+Step~\+\_\+delay\+\_\+ms(20);}
+
+
+
+Definition at line 12 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a21783f253bf1f382fc4754ec55ca22ca}\label{_step_motor_8h_a21783f253bf1f382fc4754ec55ca22ca}} 
+\index{StepMotor.h@{StepMotor.h}!PortX\_used@{PortX\_used}}
+\index{PortX\_used@{PortX\_used}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{PortX\_used}{PortX\_used}}
+{\footnotesize\ttfamily \#define Port\+X\+\_\+used~P\+O\+R\+TC;}
+
+
+
+Definition at line 14 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_ac92748410ae7bec240eed530d495f96a}\label{_step_motor_8h_ac92748410ae7bec240eed530d495f96a}} 
+\index{StepMotor.h@{StepMotor.h}!Step\_PX0@{Step\_PX0}}
+\index{Step\_PX0@{Step\_PX0}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Step\_PX0}{Step\_PX0}}
+{\footnotesize\ttfamily \#define Step\+\_\+\+P\+X0~P\+C0;}
+
+
+
+Definition at line 18 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a8ded541bb4397eeb909aa15f696352b7}\label{_step_motor_8h_a8ded541bb4397eeb909aa15f696352b7}} 
+\index{StepMotor.h@{StepMotor.h}!Step\_PX1@{Step\_PX1}}
+\index{Step\_PX1@{Step\_PX1}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Step\_PX1}{Step\_PX1}}
+{\footnotesize\ttfamily \#define Step\+\_\+\+P\+X1~P\+C1;}
+
+
+
+Definition at line 20 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a68f955215c22759e68ac9387225dae96}\label{_step_motor_8h_a68f955215c22759e68ac9387225dae96}} 
+\index{StepMotor.h@{StepMotor.h}!Step\_PX2@{Step\_PX2}}
+\index{Step\_PX2@{Step\_PX2}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Step\_PX2}{Step\_PX2}}
+{\footnotesize\ttfamily \#define Step\+\_\+\+P\+X2~P\+C2;}
+
+
+
+Definition at line 22 of file Step\+Motor.\+h.
+
+\mbox{\Hypertarget{_step_motor_8h_a85cafcc6dd59ca665bc18ac340bcb968}\label{_step_motor_8h_a85cafcc6dd59ca665bc18ac340bcb968}} 
+\index{StepMotor.h@{StepMotor.h}!Step\_PX3@{Step\_PX3}}
+\index{Step\_PX3@{Step\_PX3}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{Step\_PX3}{Step\_PX3}}
+{\footnotesize\ttfamily \#define Step\+\_\+\+P\+X3~P\+C3;}
+
+
+
+Definition at line 24 of file Step\+Motor.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_step_motor_8h_a7e361492baf87bc206f2b32453257938}\label{_step_motor_8h_a7e361492baf87bc206f2b32453257938}} 
+\index{StepMotor.h@{StepMotor.h}!init\_StepMotor@{init\_StepMotor}}
+\index{init\_StepMotor@{init\_StepMotor}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{init\_StepMotor()}{init\_StepMotor()}}
+{\footnotesize\ttfamily void init\+\_\+\+Step\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file Step\+Motor.\+c.
+
+\mbox{\Hypertarget{_step_motor_8h_abc73700b5c80324e6f187098c7c3876f}\label{_step_motor_8h_abc73700b5c80324e6f187098c7c3876f}} 
+\index{StepMotor.h@{StepMotor.h}!TurnLeft@{TurnLeft}}
+\index{TurnLeft@{TurnLeft}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{TurnLeft()}{TurnLeft()}}
+{\footnotesize\ttfamily void Turn\+Left (\begin{DoxyParamCaption}\item[{int}]{turns }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Step\+Motor.\+c.
+
+\mbox{\Hypertarget{_step_motor_8h_ace44de3e98f604da66674ce6ebccd41f}\label{_step_motor_8h_ace44de3e98f604da66674ce6ebccd41f}} 
+\index{StepMotor.h@{StepMotor.h}!TurnRight@{TurnRight}}
+\index{TurnRight@{TurnRight}!StepMotor.h@{StepMotor.h}}
+\doxysubsubsection{\texorpdfstring{TurnRight()}{TurnRight()}}
+{\footnotesize\ttfamily void Turn\+Right (\begin{DoxyParamCaption}\item[{int}]{turns }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Step\+Motor.\+c.
+
