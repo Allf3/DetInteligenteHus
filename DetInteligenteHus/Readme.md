@@ -72,13 +72,13 @@ Look on the MEGApinout for the connections
 * Step_PX3 = PC3
 
 ## Float Chart
-
+![Float Chart](FlowChart.png)
 ## Dokumentation Doxygen
 
 * Følg filvejen for at se Dokumenationen 
 * DetInteligenteHus/DetInteligenteHus/doxygen/html/index.html
 
 ## Hipo
-
+![Hipo Diagram](HIPO.png)
 ## Creator
 Martin Nørby Høj Jørgensen
