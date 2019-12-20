@@ -4,6 +4,7 @@
 * Created: 16-12-2019 12:29:24
 *  Author: mart624n
 */
+
 #define F_CPU 16000000UL
 #define Col_Delay _delay_ms(50); // Used to delay col, so it doesn't read so fast
 #define Row_Delay _delay_ms(10); //  Used to delay row, so it doesn't read so fast

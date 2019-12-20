@@ -21,12 +21,12 @@ const char MatrixKeypad[4][4] =
 {'5','6','B','4'},
 {'8','9','C','7'},
 {'0','#','D','*'}}; //Array of the keypad, with char's.
+
+void init_KeyPad(){
+	Keypad_Aktiv_DDR |= 0x0f; // PK0-3 Output PK4-7 Input
 	
-	void init_KeyPad(){
-		Keypad_Aktiv_DDR |= 0x0f; // PK0-3 Output PK4-7 Input
-			
-		Keypad_PORTX |= 0xff; //Aktivere alle Portene til at være Logical 1
-	}
+	Keypad_PORTX |= 0xff; //Aktivere alle Portene til at være Logical 1
+}
 
 int ReadRows()
 {
@@ -129,18 +129,18 @@ int StepKeyboard(int col, int row){
 		
 		switch(matrixvalue){
 			case '6'
-				TurnRight(step_postion);
-				return 3; //Current menu position
+			TurnRight(step_postion);
+			return 3; //Current menu position
 			break;
 			case '4'
-				TurnLeft(step_postion);
-				return 3; //Current menu position
+			TurnLeft(step_postion);
+			return 3; //Current menu position
 			break;
 			case '5'
-				return 3;
+			return 3;
 			break;
 			case '*'
-				return 0;
+			return 0;
 			break;
 		}
 	}
@@ -172,13 +172,13 @@ void KeyFunctions(char input){
 		}
 		break;
 		case 'D':
-			lcd_clrscr();
-			lcd_puts("Garage Is Opening");
-			currentmenu = 3
-			while (currentmenu == 3)
-			{
-				currentmenu = StepKeyboard(ColumnScan(),ReadRows()); 
-			}
+		lcd_clrscr();
+		lcd_puts("Control Garage door");
+		currentmenu = 3
+		while (currentmenu == 3)
+		{
+			currentmenu = StepKeyboard(ColumnScan(),ReadRows());
+		}
 		break;
 		case 'A':
 		lcd_clrscr();
@@ -224,6 +224,7 @@ int AlarmDecodeKeyboard(int col, int row){
 			result[4] = '\0'; //if this isn't there it wouldn't work, shows that char array stops
 			strcpy(userinput,result);
 			atempts++;
+			
 		}
 	}
 	else if (strcmp(userinput,password) == 0) //Compares char array's if same it return's 0 else a negative number
