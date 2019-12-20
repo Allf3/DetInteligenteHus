@@ -1,7 +1,5 @@
 # Det intelligente hus 
 
-Foobar is a Python library for dealing with word pluralization.
-
 ## Opbygget med
 
 [Atmel Studio 7.0](https://www.microchip.com/mplab/avr-support/atmel-studio-7)
